@@ -1,9 +1,9 @@
 # Resiliência: #
-No dicionario em sentido figurado esta defindo como "a capacidade de se recobrar facilmente ou se adaptar à má sorte ou às mudanças". Para o mundo do desenvolvimento de software podemos pensar como sendo a capacidade de uma aplicação tem de se recuperar após algum problema.
+No dicionário, em sentido figurado, está defindo como "a capacidade de se recobrar facilmente ou se adaptar à má sorte ou às mudanças". Para o mundo do desenvolvimento de software podemos pensar como sendo a capacidade que uma aplicação possui de se recuperar após algum problema.
 
-Quando trabalhavamos em aplicações monoliticas muitos desses problemas eram resolvidos com o tratamento de exceções, mas com a migração dos monolitos para arquiteturas de micresserviços alguns problemas novos surgiram e que não podem ser resolvidos com um tratamento de exceção. Exemplo: Se a maquina onde executa o serviço não estiver disponivel.
+Quando trabalhávamos em aplicações monolíticas, muitos desses problemas eram resolvidos com o tratamento de exceções, porém, com a migração dos monolitos para arquiteturas de microsserviços, alguns problemas novos surgiram e que não podem ser resolvidos com o mesmo tratamento de exceção. Exemplo: quando...ou se a máquina onde se executa o serviço não estiver disponível.
 
-Quando falamos em sistema distribuído a gama de problemas que podem ocorrer ao longo de um processamento são bem grande, e quanto mais rapido a aplicação está preparada para lidar com esses problemas mais resiliente ela se torna.
+Quando falamos em sistema distribuído, a gama de problemas que podem ocorrer ao longo de um processamento é bem grande, e quanto mais rápido a aplicação estiver preparada para lidar com esses problemas, mais resiliente ela se tornará.
 
 Alguns problemas que podem ocorrer:
 
@@ -11,11 +11,11 @@ Alguns problemas que podem ocorrer:
  - Base de dados caiu
  - Fila lotada
  - Lentidão na rede
- - Serviço lento ( se seguir batendo podemos derruba-lo)
+ - Serviço lento ( se seguir batendo podemos derrubá-lo)
  - Computador onde o microserviço está em execução falhou
  - entre outros.... 
 
-Para tornar a arquitetura o mais resiliente possivel, existem diversas estratégias:
+Para tornar a arquitetura o mais resiliente possivel, existem diversas estratégias, tais como:
 
  - Escalabilidade de serviços
  - Retry
@@ -24,9 +24,9 @@ Para tornar a arquitetura o mais resiliente possivel, existem diversas estratég
  - Bulkhead
  - Async
 
- Aqui não vou detalhar as estratégias sitadas acima, porem nos links abaixo é possivel encontrar informações bem detalhadas sobre elas. Nessas POCs meus testes focaram mais nas estratégias que vamos aplicar na app (Circuit Breaker, Retry, Bulkhead, Rate Limiter).
+ Aqui não vou detalhar as estratégias citadas acima, porém, nos links abaixo é possivel encontrarmos informações bem detalhadas sobre elas. Nessas POCs meus testes focaram mais nas estratégias que iremos aplicar na app (Circuit Breaker, Retry, Bulkhead, Rate Limiter).
 
-# Dependencias: #
+# Dependências: #
 Ambas as POCS:
 
  - Java 11
@@ -56,27 +56,27 @@ resilience4j-demo-spring:
 
  # Detalhes: #
 
- Ambas as POCs são referente a um serviço responsavel por nos entregar uma lista de frutas. 
+ Ambas as POCs referem-se a um serviço responsável por nos entregar uma lista de frutas. 
 
- Para isso devemos dizer de qual distribuidor queremos as frutas.
+ Para isso, devemos dizer de qual distribuidor queremos as frutas.
 
  Existem 3 possibilidades:
 
  - CEASA
- - Mercado Publico
+ - Mercado Público
  - Atacadão
 
- Para cada distribuidor o serviço ira solicitar as frutas que ele tem disponivel, isso poderia ser em uma base dados ou um serviço externo.
+ Para cada distribuidor o serviço irá solicitar as frutas que ele tem disponível, o que poderia ser em uma base dados ou um serviço externo.
 
- Para os testes os serviço externo não foram implementados apenas o Adapter correspondente de cada distribuidor.
+ Para estes testes, o serviço do distribuidor externo não foi implementado, apenas o Adapter correspondente de cada distribuidor.
 
- Quando o algum desses serviços por algum motivo não conseguir me entregar as frutas, um cache de frutas será retornado para o usuario que solicitou.
+ Quando algum desses serviços, por algum motivo, não conseguir me entregar as frutas, um cache de frutas será retornado para o usuário que o solicitou.
 
  Estratégia de cache não foi implantada por que não era o objetivo da POC.
  
- Dos distribuidores disponiblizados a CEASA é o único que esta funcionando, os outros por motivos diferentes não estão em funcionamento.
+ Dos distribuidores disponiblizados, a CEASA é o único que está funcionando, os outros, por motivos diferentes, não estão em funcionamento.
 
- Serviços podem se acessados:
+ Serviços podem ser acessados:
   - METHOD: get
   - content-type: application/json
   - http://localhost:9080/frutas/{distribuidor}
