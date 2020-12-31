@@ -24,7 +24,7 @@ Para tornar a arquitetura o mais resiliente possivel, existem diversas estratég
  - Bulkhead
  - Async
 
- Nessas POCs meus testes focaram mais nas estratégias que vamos aplicar na app (Circuit Breaker, Retry, Bulkhead, Rate Limiter).
+ Aqui não vou detalhar as estratégias sitadas acima, porem nos links abaixo é possivel encontrar informações bem detalhadas sobre elas. Nessas POCs meus testes focaram mais nas estratégias que vamos aplicar na app (Circuit Breaker, Retry, Bulkhead, Rate Limiter).
 
 # Dependencias: #
 Ambas as POCS:
