@@ -1,0 +1,9 @@
+
+
+server:
+    port: 9080
+    
+app:
+  timeout:
+     connect: 3
+     read: 3
