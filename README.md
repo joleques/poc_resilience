@@ -52,6 +52,7 @@ resilience4j-demo-spring:
  - [Resiliência em microsserviços](https://docs.microsoft.com/pt-br/dotnet/architecture/microservices/architect-microservice-container-applications/resilient-high-availability-microservices)
  - [Padrão circuit breaker](https://docs.microsoft.com/pt-br/azure/architecture/patterns/circuit-breaker)
  - [CircuitBreaker](https://martinfowler.com/bliki/CircuitBreaker.html)
+ - [Gateway](https://github.com/Romeh/spring-cloud-gateway-resilience4j)
 
  # Detalhes: #
 
