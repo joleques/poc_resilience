@@ -3,7 +3,7 @@ No dicionario em sentido figurado esta defindo como "a capacidade de se recobrar
 
 Quando trabalhavamos em aplicações monoliticas muitos desses problemas eram resolvidos com o tratamento de exceções, mas com a migração dos monolitos para arquiteturas de micresserviços alguns problemas novos surgiram e que não podem ser resolvidos com um tratamento de exceção. Exemplo: Se a maquina onde executa o serviço não estiver disponivel.
 
-Quando falamos em sistema distribuído a gama de problemas que podem ocorrer ao longo de um processamento são bem grande, e quanto mais rapido a aplicação está preparada para lidar com esses problemas mais resiliente ela é.
+Quando falamos em sistema distribuído a gama de problemas que podem ocorrer ao longo de um processamento são bem grande, e quanto mais rapido a aplicação está preparada para lidar com esses problemas mais resiliente ela se torna.
 
 Alguns problemas que podem ocorrer:
 
@@ -12,7 +12,8 @@ Alguns problemas que podem ocorrer:
  - Fila lotada
  - Lentidão na rede
  - Serviço lento ( se seguir batendo podemos derruba-lo)
- - Computador onde o microserviço está em execução falhou 
+ - Computador onde o microserviço está em execução falhou
+ - entre outros.... 
 
 Para tornar a arquitetura o mais resiliente possivel, existem diversas estratégias:
 
@@ -29,7 +30,7 @@ Para tornar a arquitetura o mais resiliente possivel, existem diversas estratég
 Ambas as POCS:
 
  - Java 11
- - Spring 2
+ - Spring 2.0
  - Gradle
 
 resilience4j-demo-lib:
@@ -47,11 +48,12 @@ resilience4j-demo-spring:
  - [Resilience4j](https://resilience4j.readme.io/)
  - [Resilience](https://www.baeldung.com/resilience4j)
  - [Retry](https://www.baeldung.com/spring-retry)
+ - [Microsserviços](https://docs.microsoft.com/pt-br/azure/architecture/guide/architecture-styles/microservices)
  - [Resiliência em microsserviços](https://docs.microsoft.com/pt-br/dotnet/architecture/microservices/architect-microservice-container-applications/resilient-high-availability-microservices)
  - [Padrão circuit breaker](https://docs.microsoft.com/pt-br/azure/architecture/patterns/circuit-breaker)
  - [CircuitBreaker](https://martinfowler.com/bliki/CircuitBreaker.html)
 
- # Detalhes #
+ # Detalhes: #
 
  Ambas as POCs são referente a um serviço responsavel por nos entregar uma lista de frutas. 
 
